@@ -7,6 +7,7 @@ from odoo import models
 class AccountMove(models.Model):
     _inherit = "account.move"
 
+    #override the invoice action_post to pass specific data from sale order to invoice and the data is outstanding data content 
     def action_post(self):
         # Automatic reconciliation of payment when invoice confirmed.
         res = super(AccountMove, self).action_post()
